@@ -196,8 +196,8 @@ endfunction
 nmap <leader>rn <Plug>(coc-rename)
 
 "nnoremap <silent><nowait> <leader>d :CocList diagnostics<CR>
-nmap <silent> <leader>e <Plug>(coc-diagnostic-prev)
-"nmap <silent> <leader>k <Plug>(coc-diagnostic-next)
+nmap <silent> <leader>p <Plug>(coc-diagnostic-prev)
+nmap <silent> <leader>n <Plug>(coc-diagnostic-next)
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
