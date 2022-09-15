@@ -77,7 +77,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'cateduo/vsdark.nvim'
 Plug 'jackguo380/vim-lsp-cxx-highlight'
 Plug 'easymotion/vim-easymotion'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim',{'branch':'release'}
 Plug 'iamcco/mathjax-support-for-mkdp'
 Plug 'iamcco/markdown-preview.vim'
 Plug 'puremourning/vimspector'
@@ -160,7 +160,6 @@ let g:coc_global_extensions = [
 	\ 'coc-css',
 	\ 'coc-html',
 	\ 'coc-highlight',
-	\ 'coc-clangd',
 	\ 'coc-vetur',
 	\]
 
@@ -236,11 +235,13 @@ let g:vimspector_enable_mappings = "HUMAN"
 function! s:generate_vimspector_conf()
     if empty(glob( '.vimspector.json' ))
 	if &filetype == 'c' || 'cpp'
+	    lua print("test")
 	    !cp ~/.config/nvim/vimspector_conf/c.json ./.vimspector.json
 	elseif &filetype == 'python'
 	    !cp ~/.config/nvim/vimspector_conf/python.json ./.vimspector.json
 	endif
     endif
+    e .vimspector.json
 endfunction
 
 command! -nargs=0 Gvimspector :call s:generate_vimspector_conf()
