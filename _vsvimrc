@@ -1,0 +1,72 @@
+syntax on
+let mapleader="t"
+set cursorline
+set number
+set relativenumber
+set wrap
+set showcmd
+"set wildmenu
+
+set hlsearch
+exec "nohlsearch"
+set incsearch
+set ignorecase
+set smartcase
+"set clipboard=unnamed "默认的剪切寄存器"
+set clipboard= 
+vnoremap <leader>y "*y
+
+
+"map ; :
+noremap h i
+noremap H I
+
+nnoremap i k
+nnoremap k j
+nnoremap j h
+nnoremap I 10k
+nnoremap K 10j
+nnoremap J 5h
+nnoremap L 5l
+
+nmap <c-l> $
+nmap <c-j> ^
+vnoremap <c-l> $
+vnoremap <c-j> ^
+vnoremap i k
+vnoremap k j
+vnoremap j h
+vnoremap I 10k
+vnoremap K 10j
+vnoremap J 5h
+vnoremap L 5l
+noremap ? :nohlsearch<CR>
+map <A-l> :set splitright<CR>:vsplit<CR>
+map <A-j> :set nosplitright<CR>:vsplit<CR>
+map <A-i> :set nosplitbelow<CR>:split<CR>
+map <A-k> :set splitbelow<CR>:split<CR>
+
+map <leader>i <C-w>k
+map <leader>k <C-w>j
+map <leader>j <C-w>h
+map <leader>l <C-w>l
+
+map <up> :res +5<CR>
+map <down> :res -5<CR>
+map <left> :vertical resize-5<CR>
+map <right> :vertical resize+5<CR> 
+
+:nnoremap zd  za "折叠"
+:nnoremap zm :vsc VAssistX.ListMethodsInCurrentFile<cr> "函数列表"
+:nnoremap cj :vsc VAssistX.FindReferencesinFile<CR> "当前文件中的引用"
+:nnoremap ca :vsc VAssistX.FindReferences<CR> "查看所有引用"
+:nnoremap cm :vsc File.OpenContainingFolder<CR> "打开所在文件夹"
+:nnoremap zj :vsc Edit.QuickInfo<CR> "查看函数定义文档"
+:nnoremap zp :vsc VAssistX.RefactorImplementInterface<CR> "实现接口"
+"打开解决方案资源管理器
+:nnoremap cv :vsc View.SolutionExplorer<CR>
+"在文件中查找
+:nnoremap ck :vsc Edit.FindinFiles<CR>
+
+nnoremap f gS:vsc Tools.InvokePeasyMotion<CR>
+nmap ;; gS:vsc Tools.InvokePeasyMotionTextSelect<CR>
